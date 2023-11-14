@@ -2,6 +2,7 @@ package christmas.View;
 
 import christmas.Domain.EventResult;
 import christmas.Domain.MenuOrder;
+import christmas.Domain.EventBadge;
 
 public class OutputView {
     public void printOrderMenu(MenuOrder menuOrder) {
@@ -16,12 +17,12 @@ public class OutputView {
 
     public void printGift(MenuOrder menuOrder, EventResult eventResult) {
         System.out.println("\n<증정 메뉴>");
-        System.out.println(eventResult.getGiftMenu().orElse("없음"));
+        System.out.println(EventResult.getGiftMenu().orElse("없음"));
     }
 
     public void printBenefits(EventResult eventResult) {
         System.out.println("\n<혜택 내역>");
-        for (String benefit : eventResult.getBenefits()) {
+        for (String benefit : EventResult.getBenefits()) {
             System.out.println(benefit);
         }
     }
@@ -38,6 +39,6 @@ public class OutputView {
 
     public void printEventBadge(int totalBenefits) {
         System.out.println("\n<12월 이벤트 배지>");
-        System.out.println(EventBadge.getEventBadge(totalBenefits));
+        System.out.println(EventBadge.getBadgeName());
     }
 }
