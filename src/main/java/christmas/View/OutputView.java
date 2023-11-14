@@ -36,7 +36,6 @@ public class OutputView {
         System.out.println(finalPayment + "원");
     }
 
-    //
     public void printEventBadge(int totalBenefits) {
         System.out.println("\n<12월 이벤트 배지>");
         System.out.println(EventBadge.getEventBadge(totalBenefits));
